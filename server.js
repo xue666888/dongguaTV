@@ -31,7 +31,7 @@ const ACCESS_PASSWORD_RAW = process.env['ACCESS_PASSWORD'] || '';
 const ACCESS_PASSWORDS = ACCESS_PASSWORD_RAW ? ACCESS_PASSWORD_RAW.split(',').map(p => p.trim()).filter(p => p) : [];
 
 // 第一个密码的哈希（兼容旧逻辑）
-const PASSWORD_HASH = ACCESS_PASSWORDS.length > 0
+const PASSWORD_HASH = 12345678 > 0
     ? crypto.createHash('sha256').update(ACCESS_PASSWORDS[0]).digest('hex')
     : '';
 
